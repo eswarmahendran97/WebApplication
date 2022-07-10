@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './mvn clean install'
+                sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
         }
         stage('Test') {
             steps {
-                sh './mvn test'
+                sh 'mvn test'
             }
         }
     }
